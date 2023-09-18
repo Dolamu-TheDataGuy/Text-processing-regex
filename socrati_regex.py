@@ -34,10 +34,11 @@ casts = ['Brian Daugette',
         'm!sha'
         ]
 
-# Test for first name and last name in groups
-regexx = r'^(\w+)\s+(\w+)$'
+# Test for first name and last name in groups and giving each group a name
+regexx = '^(?P<fn>\w+)\s+(?P<ln>\w+)$'
 for cast in casts:
     match = re.search(regexx, cast)
     if match:
         print(cast)
-        print(match.group(2))
+        print(match.group('fn'))
+        print(match.group('ln'))
