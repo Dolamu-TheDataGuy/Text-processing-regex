@@ -35,10 +35,22 @@ casts = ['Brian Daugette',
         ]
 
 # Test for first name and last name in groups and giving each group a name
-regexx = '^(?P<fn>\w+)\s+(?P<ln>\w+)$'
+# regexx = '^(?P<fn>\w+)\s+(?P<ln>\w+)$'
+# for cast in casts:
+#     match = re.search(regexx, cast)
+#     if match:
+#         print(cast)
+#         print(match.group('fn'))
+#         print(match.group('ln'))
+
+# Detect last name with !
+regex = '^[a-zA-Z!]+$'
 for cast in casts:
-    match = re.search(regexx, cast)
-    if match:
+    if re.search(regex, cast):
         print(cast)
-        print(match.group('fn'))
-        print(match.group('ln'))
+
+regex = '[a-z]+'
+for cast in casts:
+    match = re.findall(regex, cast)
+    if match:
+        print(match)
