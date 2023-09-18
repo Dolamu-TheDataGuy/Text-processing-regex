@@ -59,7 +59,7 @@ https://www.python-engineer.com
 http://www.pyeng.net
 """
 
-pattern = re.compile(r"http(s)?\://(www\.)?[a-zA-Z0-9-]+\.(com|net)")
+pattern = re.compile(r"http(s)?\://(www\.)?[a-zA-Z0-9-+]+\.(com|net)")
 matches = pattern.finditer(urls)
 
 for match in matches:
