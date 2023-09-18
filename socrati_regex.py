@@ -26,3 +26,17 @@ for name in names:
         print(match.span())
         print(match.group())
 
+
+casts = ['Brian Daugette',
+        'Veronica Supersonica',
+        'Tony Gasparovic',
+        'Patrick Germann',
+        'm!sha'
+        ]
+
+# Test for first name and last name
+regexx = r'^\w+\s+\w+$'
+for cast in casts:
+    match = re.search(regexx, cast)
+    if match:
+        print(cast)
