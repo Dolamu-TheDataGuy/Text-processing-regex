@@ -51,6 +51,6 @@ for cast in casts:
 
 regex = '[a-z]+'
 for cast in casts:
-    match = re.findall(regex, cast)
-    if match:
-        print(match)
+    match = re.finditer(regex, cast)
+    for matches in match:
+        print(matches)
